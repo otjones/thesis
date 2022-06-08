@@ -176,7 +176,6 @@ def shuffle_panels_all(height_range, number_of_panels):
                         bpy.data.collections["GEO"].objects[p].modifiers["Array"].relative_offset_displace[1] = panel_dictionary[p][1]
                         count += panel_dictionary[p][0]
                         if "001" in p:
-                            print("YAS")
                             f_stand_1 = (panel_dictionary[p][0], panel_dictionary[p][1])
                         elif "002" in p:
                             f_stand_2 = (panel_dictionary[p][0], panel_dictionary[p][1])
@@ -234,7 +233,7 @@ def shuffle_panels_all(height_range, number_of_panels):
             for obj in bpy.context.selected_objects:
                 bpy.context.view_layer.objects.active = obj
             bpy.ops.object.duplicate(linked=False)
-            bpy.context.view_layer.objects.active.name = f"fuck.{i}"
+            bpy.context.view_layer.objects.active.name = f"dummy.{i}"
             bpy.ops.object.select_all(action='DESELECT')
             for obj in bpy.data.collections['GEO'].objects:
                 if f"Baffles.{i}" in obj.name:
@@ -244,7 +243,7 @@ def shuffle_panels_all(height_range, number_of_panels):
         for i in ["001","002"]:
             bpy.ops.object.select_all(action='DESELECT')  
             for obj in bpy.data.collections['GEO'].objects:
-                if f"fuck.{i}" in obj.name:
+                if f"dummy.{i}" in obj.name:
                     obj.select_set(True)
             for obj in bpy.context.selected_objects:
                 bpy.context.view_layer.objects.active = obj
@@ -315,8 +314,8 @@ def restore_panels():
     for i in ["001","002"]:
         bpy.ops.object.select_all(action='DESELECT')
         for obj in bpy.data.collections['GEO'].objects:
-            if f"fuck.{i}" in obj.name:
-                bpy.data.objects.remove(bpy.data.objects[f"fuck.{i}"], do_unlink=True)
+            if f"dummy.{i}" in obj.name:
+                bpy.data.objects.remove(bpy.data.objects[f"dummy.{i}"], do_unlink=True)
 
     ### SHOW ORIGINALS       
     for i in ["001","002"]:
