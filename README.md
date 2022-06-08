@@ -70,14 +70,14 @@ Plots final summary bar chart to compare methods
 
 Generates instruction files for sortDS.py to use when converting raw .txt results from CATT into useful .json stats
 
-###reduceSNR.py
+### reduceSNR.py
 
 Called from other scripts, used to calculate mean SNR of a room given its four src-rec pairs
 
-###sortDS.py
+### sortDS.py
 
 Used to sort the raw .txt results files from CATT into usefl .JSON data files, which are used in all subsequent analysis
 
-###t30test.py
+### t30test.py
 
 Used to plot T30 convergence of optimised rooms
