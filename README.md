@@ -35,3 +35,49 @@ Assets blend file and materials txt file must be in the _assets path_ set within
 ### blender-implement.py
 
 Script to simply load an implementation json file and hide/show relavent panels. 
+
+## Post Simulation
+
+### ansis.py
+
+Statistical analysis and chart plotting for sorted results
+
+### blenderInfo.py
+
+Static file to store panel - zone belongings
+
+### compareSNR.py
+
+Plots bar chart of the 16 candidate rooms optimised for SNR
+
+### learn.py
+
+Used for all optimisation and some analysis and chart plotting
+
+### panels_det.py
+
+Used to sort through the 42 simulation results testing each zone at a time and produce implementaton file
+
+### plot_T30_histo.py
+
+Plots histograms of random rooms results
+
+### plotsummary.py
+
+Plots final summary bar chart to compare methods
+
+### presortINS.py
+
+Generates instruction files for sortDS.py to use when converting raw .txt results from CATT into useful .json stats
+
+###reduceSNR.py
+
+Called from other scripts, used to calculate mean SNR of a room given its four src-rec pairs
+
+###sortDS.py
+
+Used to sort the raw .txt results files from CATT into usefl .JSON data files, which are used in all subsequent analysis
+
+###t30test.py
+
+Used to plot T30 convergence of optimised rooms
