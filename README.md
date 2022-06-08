@@ -1,3 +1,12 @@
+# Files
+
+- **CATTMaterials.txt** Store the material properties and names, should correspond to names used in assetsLibrary.blend
+- **assetsLibrary.blend** Blender file with materials, should be added to asset manager in main Blender project to enable drag and drop materials. Each geometry to be exported in the scene must have a material name which corresponds to one in the CATTMaterials.txt
+- **dreamfactory-base.blend** Base model used for all simulations
+- ***for-blender*** Code to run within Blender
+- ***post-simulation*** Code torun on CATT simulation results files
+- ***data-archive*** Zipped data for each experiment run in the paper. Includes all .GEO .SRC .REC files and all raw .txt CATT outputs and cleaned up .JSON stats files using post-simulation code. Also includes extra files where necessary including instructions files for post-simulation code to know which sources and recievers belong to which room.
+
 # Code Summary
 
 > Code is for experimental and research purposes only. Code requires editing and commenting to achieve its functions.
@@ -11,10 +20,18 @@ This script was written to be used as an add-on, and was run from Blender's text
 - **Export:** Runs the export sequence to save to disk the .GEO .SRC and .REC files and the room configuration description files (if uncommented in code)
 - **Build Instructions:** Exports .TXT files to describe which sources and recievers are in which room, using the bounding box empty.
 
-### Scene setup and code dependancies
+### Scene setup
 
-- GEO scene collection for all exportable geometry. Geometry should be clean with no overlapping vertices
-- SRC scene collection for all exportable sound sources. Naming: S\_{source number}\_{directivity file}, e.g. "S_0_omni.SD0"
-- REC scene collection for all exportable sound recievers. Naming: R\_{reciever number}, e.g. "R_0"
-- TAR scene collection for all sound source target (used for source direction). Naming: T\_{source number}, e.g. "T_0"
-- BOUNDS scene collection for bounding box empty object around the room. Naming: name of room, when exporting multiple rooms at once indices are appended.
+- **GEO** scene collection for all exportable geometry. Geometry should be clean with no overlapping vertices
+- **SRC** scene collection for all exportable sound sources. Naming: S\_{source number}\_{directivity file}, e.g. "S_0_omni.SD0"
+- **REC** scene collection for all exportable sound recievers. Naming: R\_{reciever number}, e.g. "R_0"
+- **TAR** scene collection for all sound source target (used for source direction). Naming: T\_{source number}, e.g. "T_0"
+- **BOUNDS** scene collection for bounding box empty object around the room. Naming: name of room, when exporting multiple rooms at once indices are appended.
+
+### Code dependancies
+
+Assets blend file and materials txt file must be in the _assets path_ set within the UI panel. Parts of the code will not run if any of the required inputs are missing, most major errors will be printed in the UI panel.
+
+### blender-implement.py
+
+Script to simply load an implementation json file and hide/show relavent panels. 
