@@ -14,4 +14,7 @@ This script was written to be used as an add-on, and was run from Blender's text
 ### Scene setup and code dependancies
 
 - GEO scene collection for all exportable geometry. Geometry should be clean with no overlapping vertices
-- SRC scene collection for all exportable sound sources. Naming convention: S\_{source number}\_{directivity file}, e.g. "S_0_omni.SD0"
+- SRC scene collection for all exportable sound sources. Naming: S\_{source number}\_{directivity file}, e.g. "S_0_omni.SD0"
+- REC scene collection for all exportable sound recievers. Naming: R\_{reciever number}, e.g. "R_0"
+- TAR scene collection for all sound source target (used for source direction). Naming: T\_{source number}, e.g. "T_0"
+- BOUNDS scene collection for bounding box empty object around the room. Naming: name of room, when exporting multiple rooms at once indices are appended.
