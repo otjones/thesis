@@ -1,10 +1,10 @@
 # Files
 
-- **CATTMaterials.txt** Store the material properties and names, should correspond to names used in assetsLibrary.blend
+- **CATTMaterials.txt** Stores the material properties and names, should correspond to names used in assetsLibrary.blend
 - **assetsLibrary.blend** Blender file with materials, should be added to asset manager in main Blender project to enable drag and drop materials. Each geometry to be exported in the scene must have a material name which corresponds to one in the CATTMaterials.txt
 - **dreamfactory-base.blend** Base model used for all simulations
 - ***for-blender*** Code to run within Blender
-- ***post-simulation*** Code torun on CATT simulation results files
+- ***post-simulation*** Code to run on CATT simulation results files
 - ***data-archive*** Zipped data for each experiment run in the paper. Includes all .GEO .SRC .REC files and all raw .txt CATT outputs and cleaned up .JSON stats files using post-simulation code. Also includes extra files where necessary including instructions files for post-simulation code to know which sources and recievers belong to which room.
 
 # Code Summary
@@ -15,7 +15,7 @@
 
 ### blender-main.py
 
-This script was written to be used as an add-on, and was run from Blender's text editor. In BLender, open a text editor window and paste the code. Edit the paramters at the top of the script and run. A UI panel will appear on the right hand side of the 3D viewport workspace with further prompts and two buttons.
+This script was written to be used as an add-on, and was run from Blender's text editor. In Blender, open a text editor window and paste the code. Edit the paramters at the top of the script and run. A UI panel will appear on the right hand side of the 3D viewport workspace with further prompts and two buttons.
 
 - **Export:** Runs the export sequence to save to disk the .GEO .SRC and .REC files and the room configuration description files (if uncommented in code)
 - **Build Instructions:** Exports .TXT files to describe which sources and recievers are in which room, using the bounding box empty.
@@ -30,7 +30,7 @@ This script was written to be used as an add-on, and was run from Blender's text
 
 ### Code dependancies
 
-Assets blend file and materials txt file must be in the _assets path_ set within the UI panel. Parts of the code will not run if any of the required inputs are missing, most major errors will be printed in the UI panel.
+Assets blend file and materials txt file must be in the _assets path_ set within the UI panel. Sound sources must have a directivity which must be in the directivities file path specified in UI panel. Parts of the code will not run if any of the required inputs are missing, most major errors will be printed in the UI panel.
 
 ### blender-implement.py
 
@@ -76,7 +76,7 @@ Called from other scripts, used to calculate mean SNR of a room given its four s
 
 ### sortDS.py
 
-Used to sort the raw .txt results files from CATT into usefl .JSON data files, which are used in all subsequent analysis
+Used to sort the raw .txt results files from CATT into useful .JSON data files, which are used in all subsequent analysis
 
 ### t30test.py
 
