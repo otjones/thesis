@@ -1,3 +1,5 @@
+# Master's Thesis Documentation
+
 # Files
 
 - **CATTMaterials.txt** Stores the material properties and names, should correspond to names used in assetsLibrary.blend
